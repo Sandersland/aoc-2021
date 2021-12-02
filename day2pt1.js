@@ -8,22 +8,19 @@
         y: 0 // depth
     };
 
-    let aim = 0;
-
     for (let i = 0; i < inputData.length; i++) {
         const [direction, numString] = inputData[i].split(" ");
         const units = parseInt(numString);
-
+        
         switch(direction) {
             case "up":
-                   aim -= units;
+                position.y -= units;
                 break;
             case "down":
-                   aim += units;
+                position.y += units;
                 break;
             case "forward":
                 position.x += units;
-                position.y += (aim * units);
                 break;
             default:
                 break;
